@@ -2,6 +2,7 @@ package com.may.testCases;
 
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
@@ -17,6 +18,7 @@ import com.may.utilities.ReadConfig;
 public class BaseClass {
 	
 	ReadConfig readconfig = new ReadConfig();
+	
 	
 	
 	public String baseURL=readconfig.getApplicationURL();
@@ -48,6 +50,8 @@ public class BaseClass {
 		driver.get(baseURL);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		
+		
+		
 	
 	}
 	
@@ -57,6 +61,21 @@ public class BaseClass {
 		logger.info("Execution done,Closing of browser");
 		driver.quit();
 	}
+	
+	//Need to add the library commons.lang3
+	//random string
+		public String randomString()
+		{
+			String generatedString = RandomStringUtils.randomAlphabetic(8);
+			return generatedString;
+		}
+	//random numbers
+		public String randNumber()
+		{
+			String generatedNumber = RandomStringUtils.randomNumeric(5);
+			return generatedNumber;
+		}
+
 	
 
 }

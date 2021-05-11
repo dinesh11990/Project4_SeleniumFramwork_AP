@@ -13,6 +13,7 @@ WebDriver ldriver;
 		
 		ldriver = rdriver;
 		
+		//PageFactory.initElements(driver, pageObjectClass)
 		PageFactory.initElements(rdriver, this);
 	}
 
@@ -21,13 +22,13 @@ WebDriver ldriver;
 	//Elements
 	
 	@FindBy(name="uid")
-	WebElement txtUsername;
+	public static WebElement txtUsername;
 	
 	@FindBy(name="password")
-	WebElement txtPassword;
+	public static WebElement txtPassword;
 	
 	@FindBy(name="btnLogin")
-	WebElement submitButton;
+	public static WebElement submitButton;
 	
 	
 	//Actions
